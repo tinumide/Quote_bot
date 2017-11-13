@@ -1,12 +1,22 @@
 import  json
 import requests
 
-def get_quotes(Quotes):
-	search_term = ''
-	response = requests.get('' , search_term)
-	data = response.json()
-	
+def get_quotes():
+	# search_term = Quotes
+	response = requests.get('http://quotesondesign.com/wp-json/posts?')
+	r = response.json()[0]
+	text = r['content'].replace('<p>', '').replace('</p>', '')
+	print(text)
+	# filter[orderby]=rand&filter[posts_per_page]=1
+	#response = requests.get('https://talaikis.com/api/quotes/random/.json')
+
+	# print (response.text)
+	# print(response.content)
+	# data = response.json()
+	# data = response.json()
+	# return data
 
 
-	if __name__ == '__main__':
-		get_quotes()
+if __name__ == '__main__':
+	get_quotes()
+
