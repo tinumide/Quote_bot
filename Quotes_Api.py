@@ -7,6 +7,8 @@ def get_quotes():
 	r = response.json()[0]
 	text = r['content'].replace('<p>', '').replace('</p>', '')
 	print(text)
+	return text
+	
 	# filter[orderby]=rand&filter[posts_per_page]=1
 	#response = requests.get('https://talaikis.com/api/quotes/random/.json')
 
@@ -18,5 +20,5 @@ def get_quotes():
 
 
 if __name__ == '__main__':
-	get_quotes()
+	print(get_quotes())
 
