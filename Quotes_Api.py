@@ -3,10 +3,10 @@ import requests
 
 def get_quotes():
 	# search_term = Quotes
-	response = requests.get('http://quotesondesign.com/wp-json/posts?')
+	response = requests.get('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
 	r = response.json()[0]
 	text = r['content'].replace('<p>', '').replace('</p>', '')
-	print(text)
+	# print(text)
 	return text
 	
 	# filter[orderby]=rand&filter[posts_per_page]=1
